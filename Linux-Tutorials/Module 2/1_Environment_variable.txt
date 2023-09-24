@@ -1,0 +1,43 @@
+Environment Variable
+
+
+1. How can you know what is the secondary command prompt set your system ?
+   How can you change the secondary command prompt from the default to your username ?
+
+Ans: 
+
+Secondary command prompt is stored in the "PS2" Environment Variable.
+To change the secondary command promt to the username, we need to assign the PS2 variable to the "LOGNAME" environment variable. 
+
+┌──(kali㉿kali)-[~]
+└─$ echo $PS2
+%_> 
+                                                                                                                    
+┌──(kali㉿kali)-[~]
+└─$ PS2="$LOGNAME "
+                                                                                                                    
+┌──(kali㉿kali)-[~]
+└─$ echo $PS2
+kali 
+
+2. How can you ensure that the mv command (used for renaming a file) always asks for permission before overwriting an existing destination file ? 
+   [ Hint : use alias command ]
+
+Ans:
+We can use alias command to assign mv command to "mv -i", so it always asks permission before overwriting an existing destination file. 
+
+┌──(kali㉿kali)-[~]
+└─$ touch hello.txt hello1.txt
+                                                                                                                   
+┌──(kali㉿kali)-[~]
+└─$ alias mv="mv -i"
+                                                                                                                   
+┌──(kali㉿kali)-[~]
+└─$ echo "Hello" >> hello.txt
+                                                                                                                   
+┌──(kali㉿kali)-[~]
+└─$ echo "Bye" >> hello1.tt  
+                                                                                                                   
+┌──(kali㉿kali)-[~]
+└─$ mv hello.txt hello1.txt
+mv: overwrite 'hello1.txt'? yes
