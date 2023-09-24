@@ -1,0 +1,78 @@
+File Attributes
+
+1. Create a file abc.txt and change the ownership of this file to some other user on your machine,
+   and also change the group to family.
+
+Ans: 
+
+──(kali㉿kali)-[~/Desktop]
+└─$ touch abc.txt
+┌──(kali㉿kali)-[~/Desktop]
+└─$ sudo chown Arunkumar abc.txt 
+┌──(kali㉿kali)-[~/Desktop]
+└─$ ls -l abc.txt
+-rw-r--r-- 1 Arunkumar kali 0 Sep 18 06:32 abc.txt
+┌──(kali㉿kali)-[~/Desktop]
+└─$ sudo chgrp family abc.txt   
+┌──(kali㉿kali)-[~/Desktop]
+└─$ ls -l abc.txt
+-rw-r--r-- 1 Arunkumar family 0 Sep 18 06:32 abc.txt
+
+2. Create a file exercise.txt and make it  executable.
+Ans:
+
+┌──(kali㉿kali)-[~/Desktop]
+└─$ touch exercise.txt
+┌──(kali㉿kali)-[~/Desktop]
+└─$ sudo chmod +x exercise.txt
+[sudo] password for kali: 
+┌──(kali㉿kali)-[~/Desktop]
+└─$ ls -l exercise.txt
+-rwxr-xr-x 1 kali kali 0 Sep 18 08:08 exercise.txt
+
+3. Create a file test.txt on your desktop and identify its inode number, also create a softlink for test.txt in your home.
+
+Ans: 
+
+┌──(kali㉿kali)-[~/Desktop]
+└─$ touch test.txt
+┌──(kali㉿kali)-[~/Desktop]
+└─$ ls -i test.txt    
+3145976 test.txt
+┌──(kali㉿kali)-[~/Desktop]
+└─$ ln -s test.txt test1.txt
+┌──(kali㉿kali)-[~/Desktop]
+└─$ ls -i test.txt test1.txt
+3145840 test1.txt  3145976 test.txt
+┌──(kali㉿kali)-[~/Desktop]
+└─$ ls -l test.txt test1.txt
+lrwxrwxrwx 1 kali kali 8 Sep 18 08:14 test1.txt -> test.txt
+-rw-r--r-- 1 kali kali 0 Sep 18 08:14 test.txt
+
+
+Notes:
+1. chown -> Changing Ownership (only the admin can change the owner of a file or directory)
+syntax:
+chown [options] ownername filename/directoryname
+-R: To change the permission on files that are in the subdirectories of the directory.
+-c: Change the permission for each file
+-f: Prevents chown from displaying error messages. 
+
+
+2. chmod -> It is used to change the access mode (Permissions) of one or more files. 
+Syntax:
+chmode [options] mode filename
+-c, -changes: Print information about the files that are changed. 
+File Permissions: 
+r: Read
+w: Write
+x: Execute
+s: Set user (or group) ID
+
+3. chgrp -> It is used to change the group of one or more files to a new group 
+Syntax: 
+chgrp [options] newgroup files. 
+
+4. Inode in Linux:
+The inode number is a unique integer assigned to the device. 
+We can use ls -i command to see the inode number of a file. 
