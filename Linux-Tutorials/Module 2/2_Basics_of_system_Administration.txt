@@ -1,0 +1,157 @@
+Basics Of System Administration in Linux
+
+
+1. Create a new user account and home directory called "Duck" 
+Ans:
+┌──(kali㉿kali)-[~]
+└─$ sudo adduser duck
+
+2. Set the user account "Duck's" expirey date as 07 - 01 - 2015
+Ans: 
+
+┌──(kali㉿kali)-[~]
+└─$ sudo usermod -e 2015-01-17 duck
+
+3. find the id of the user account "Duck"
+Ans: 
+
+┌──(kali㉿kali)-[~]
+└─$ id -u
+1000
+
+4. Type df and du commands and see the output on your terminal.
+Ans: 
+┌──(kali㉿kali)-[~]
+└─$ df   
+Filesystem     1K-blocks     Used Available Use% Mounted on
+udev              966784        0    966784   0% /dev
+tmpfs             201428      980    200448   1% /run
+/dev/sda1       82083148 14869300  62998300  20% /
+tmpfs            1007136        0   1007136   0% /dev/shm
+tmpfs               5120        0      5120   0% /run/lock
+tmpfs             201424      116    201308   1% /run/user/1000
+                                                                                                                                                                                                                                            
+┌──(kali㉿kali)-[~]
+└─$ du
+4       ./Desktop/d1/demodir/inside_demo
+12      ./Desktop/d1/demodir
+16      ./Desktop/d1
+4       ./Desktop/demodir/inside_demo
+12      ./Desktop/demodir
+48      ./Desktop
+4       ./Downloads
+4       ./.gnupg/private-keys-v1.d
+8       ./.gnupg
+8       ./.java/.userPrefs/burp
+12      ./.java/.userPrefs
+16      ./.java
+4       ./Videos
+8       ./.local/share/nautilus/scripts
+12      ./.local/share/nautilus
+4       ./.local/share/Mousepad
+4       ./.local/share/icc
+8       ./.local/share/gedit
+12      ./.local/share/keyrings
+48      ./.local/share
+8       ./.local/state/wireplumber
+12      ./.local/state
+64      ./.local
+4       ./Templates
+396     ./Pictures
+4       ./.cache/sessions
+24      ./.cache/xfce4/notifyd
+28      ./.cache/xfce4
+1324    ./.cache/gstreamer-1.0
+4       ./.cache/obexd
+1288    ./.cache/mesa_shader_cache
+4       ./.cache/mozilla/firefox/782t3ubc.default-esr/thumbnails
+17956   ./.cache/mozilla/firefox/782t3ubc.default-esr/startupCache
+4       ./.cache/mozilla/firefox/782t3ubc.default-esr/safebrowsing/google4
+8       ./.cache/mozilla/firefox/782t3ubc.default-esr/safebrowsing
+224     ./.cache/mozilla/firefox/782t3ubc.default-esr/cache2/entries
+12      ./.cache/mozilla/firefox/782t3ubc.default-esr/cache2/doomed
+240     ./.cache/mozilla/firefox/782t3ubc.default-esr/cache2
+18212   ./.cache/mozilla/firefox/782t3ubc.default-esr
+4       ./.cache/mozilla/firefox/eqpjtymc.default
+18220   ./.cache/mozilla/firefox
+18224   ./.cache/mozilla
+12      ./.cache/fontconfig
+20940   ./.cache
+4       ./Public
+8       ./.config/dconf
+8       ./.config/qterminal.org
+8       ./.config/powershell
+8       ./.config/pulse
+8       ./.config/qt5ct
+8       ./.config/nautilus
+4       ./.config/enchant
+8       ./.config/Thunar
+8       ./.config/cherrytree
+16      ./.config/xfce4/panel/launcher-7
+8       ./.config/xfce4/panel/launcher-6
+8       ./.config/xfce4/panel/launcher-5
+44      ./.config/xfce4/panel
+20      ./.config/xfce4/desktop
+4       ./.config/xfce4/xfwm4
+60      ./.config/xfce4/xfconf/xfce-perchannel-xml
+64      ./.config/xfce4/xfconf
+140     ./.config/xfce4
+12      ./.config/Mousepad
+8       ./.config/gtk-3.0
+8       ./.config/gedit
+248     ./.config
+4       ./Music
+4       ./.mozilla/extensions
+4       ./.mozilla/firefox/Pending Pings
+4       ./.mozilla/firefox/Crash Reports/events
+12      ./.mozilla/firefox/Crash Reports
+4       ./.mozilla/firefox/782t3ubc.default-esr/settings
+4       ./.mozilla/firefox/782t3ubc.default-esr/datareporting/glean/events
+8       ./.mozilla/firefox/782t3ubc.default-esr/datareporting/glean/db
+4       ./.mozilla/firefox/782t3ubc.default-esr/datareporting/glean/pending_pings
+20      ./.mozilla/firefox/782t3ubc.default-esr/datareporting/glean
+32      ./.mozilla/firefox/782t3ubc.default-esr/datareporting
+4       ./.mozilla/firefox/782t3ubc.default-esr/minidumps
+4       ./.mozilla/firefox/782t3ubc.default-esr/bookmarkbackups
+4       ./.mozilla/firefox/782t3ubc.default-esr/sessionstore-backups
+4       ./.mozilla/firefox/782t3ubc.default-esr/storage/permanent/chrome/idb/2823318777ntouromlalnodry--naod.files
+4       ./.mozilla/firefox/782t3ubc.default-esr/storage/permanent/chrome/idb/2918063365piupsah.files
+4       ./.mozilla/firefox/782t3ubc.default-esr/storage/permanent/chrome/idb/3561288849sdhlie.files
+4       ./.mozilla/firefox/782t3ubc.default-esr/storage/permanent/chrome/idb/1657114595AmcateirvtiSty.files
+4       ./.mozilla/firefox/782t3ubc.default-esr/storage/permanent/chrome/idb/1451318868ntouromlalnodry--epcr.files
+4       ./.mozilla/firefox/782t3ubc.default-esr/storage/permanent/chrome/idb/3870112724rsegmnoittet-es.files
+504     ./.mozilla/firefox/782t3ubc.default-esr/storage/permanent/chrome/idb
+512     ./.mozilla/firefox/782t3ubc.default-esr/storage/permanent/chrome
+516     ./.mozilla/firefox/782t3ubc.default-esr/storage/permanent
+4       ./.mozilla/firefox/782t3ubc.default-esr/storage/default
+4       ./.mozilla/firefox/782t3ubc.default-esr/storage/temporary
+4       ./.mozilla/firefox/782t3ubc.default-esr/storage/to-be-removed
+660     ./.mozilla/firefox/782t3ubc.default-esr/storage
+4       ./.mozilla/firefox/782t3ubc.default-esr/crashes/events
+12      ./.mozilla/firefox/782t3ubc.default-esr/crashes
+4       ./.mozilla/firefox/782t3ubc.default-esr/security_state
+12200   ./.mozilla/firefox/782t3ubc.default-esr
+8       ./.mozilla/firefox/eqpjtymc.default
+12236   ./.mozilla/firefox
+12244   ./.mozilla
+4       ./Documents
+34140   .
+
+5. Type this command on the terminal and see the output :
+   du -ch *.txt
+
+Ans: 
+
+┌──(kali㉿kali)-[~]
+└─$ du -ch *.txt
+4.0K    error_log.txt
+0       hell1.txt
+4.0K    hello1.txt
+8.0K    process_info.txt
+16K     total
+
+6. Delete the user account "Duck" permanently along with its home folder.
+Ans: 
+
+┌──(kali㉿kali)-[~]
+└─$ sudo userdel -r duck
