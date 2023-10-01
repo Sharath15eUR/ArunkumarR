@@ -1,0 +1,41 @@
+TAIL COMMAND 
+1. Try to get the Last 10 lines from /etc/passwd
+Ans: 
+┌──(kali㉿kali)-[~]
+└─$ tail -n10 /etc/passwd
+miredo:x:126:65534::/var/run/miredo:/usr/sbin/nologin
+statd:x:127:65534::/var/lib/nfs:/usr/sbin/nologin
+redis:x:128:135::/var/lib/redis:/usr/sbin/nologin
+postgres:x:129:136:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
+mosquitto:x:130:138::/var/lib/mosquitto:/usr/sbin/nologin
+inetsim:x:131:139::/var/lib/inetsim:/usr/sbin/nologin
+_gvm:x:132:141::/var/lib/openvas:/usr/sbin/nologin
+kali:x:1000:1000:,,,:/home/kali:/usr/bin/zsh
+Arunkumar:x:1001:1001::/home/Arunkumar:/bin/sh
+family:x:1002:1002:family,family,family,family,family:/home/family:/bin/bash
+
+2. Try to get just the Last 3 lines from /etc/passwd
+Ans:
+
+┌──(kali㉿kali)-[~]
+└─$ tail -n3 /etc/passwd 
+kali:x:1000:1000:,,,:/home/kali:/usr/bin/zsh
+Arunkumar:x:1001:1001::/home/Arunkumar:/bin/sh
+family:x:1002:1002:family,family,family,family,family:/home/family:/bin/bash
+
+3.  Try to follow the log file /var/log/auth.log
+
+┌──(kali㉿kali)-[~]
+└─$ journalctl -f
+Oct 01 03:36:18 kali systemd[40990]: Reached target exit.target - Exit the Session.
+Oct 01 03:36:18 kali (sd-pam)[40992]: pam_unix(systemd-user:session): session closed for user lightdm
+Oct 01 03:36:18 kali systemd[1]: user@110.service: Deactivated successfully.
+Oct 01 03:36:18 kali systemd[1]: Stopped user@110.service - User Manager for UID 110.
+Oct 01 03:36:18 kali systemd[1]: Stopping user-runtime-dir@110.service - User Runtime Directory /run/user/110...
+Oct 01 03:36:18 kali systemd[1]: run-user-110.mount: Deactivated successfully.
+Oct 01 03:36:18 kali systemd[1]: user-runtime-dir@110.service: Deactivated successfully.
+Oct 01 03:36:18 kali systemd[1]: Stopped user-runtime-dir@110.service - User Runtime Directory /run/user/110.
+Oct 01 03:36:18 kali systemd[1]: Removed slice user-110.slice - User Slice of UID 110.
+Oct 01 03:36:18 kali systemd[1]: user-110.slice: Consumed 1.559s CPU time.
+Oct 01 03:37:40 kali su[42091]: pam_unix(su:auth): authentication failure; logname= uid=1000 euid=0 tty=/dev/pts/0 ruser=kali rhost=  user=kali
+Oct 01 03:37:42 kali su[42091]: FAILED SU (to kali) kali on pts/0
