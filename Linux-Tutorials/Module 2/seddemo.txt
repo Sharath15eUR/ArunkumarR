@@ -1,0 +1,13 @@
+A001|Anirban Roy Choudhury|computers|95|Pass|8000
+A002|Ankit Pilania|electronics|98|Pass|8900
+C003|Ankit Saraf|civil|32|Fail|2000
+S004|Goutam kumar Kumar|chemical|77|Pass|7700
+A005|Mani Chowdhari|electrical|23|Fail|2000
+X006|Mohan Kumar|computers|67|Incomplete|0
+W007|Sandeep|civil|2|Fail|0
+A008|Yogesh|computers|91|Pass|8000
+S009|Yojna chaudhury|electronics|38|Incomplete|1000
+A010|Zubin|Computers|12|Fail|1500
+C011|Mira Nair|electronics|66|Pass|7000
+X012|Meera Banik|civil|76|Pass|6300
+W013|Meeraa Roy|civil|41|Pass|4000

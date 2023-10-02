@@ -1,0 +1,16 @@
+                                                                                                                                                                                                   
+┌──(kali㉿kali)-[~]
+└─$ grep -ie "electronics" -ie "civil" grepdemo.txt
+A002|Ankit Pilania|electronics|98|Pass|8900
+C003|Ankit Saraf|civil|32|Fail|2000
+W007|Sandeep|civil|2|Fail|0
+S009|Yojna chaudhury|electronics|38|Incomplete|1000
+C011|Mira Nair|electronics|66|Pass|7000
+X012|Meera Banik|civil|76|Pass|6300
+W013|Meeraa Roy|civil 41|Pass|4000
+
+1. List those entries that are 5 letters long and starts with Y
+                                                                                                                                                                                                                               
+┌──(kali㉿kali)-[~]
+└─$ grep "Y.... " grepdemo.txt                     
+S009|Yojna chaudhury|electronics|38|Incomplete|1000
