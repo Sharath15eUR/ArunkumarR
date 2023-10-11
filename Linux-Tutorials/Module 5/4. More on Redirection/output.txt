@@ -1,0 +1,18 @@
+┌──(kali㉿kali)-[~]
+└─$ cat > X_file.txt     
+Hello World! This is Arunkumar.
+                                                                                                                                                                                                                                           
+┌──(kali㉿kali)-[~]
+└─$ chmod +x redirect2.sh
+                                                                                                                                                                                                                                           
+┌──(kali㉿kali)-[~]
+└─$ ./redirect2.sh
+cat: out_file.txt: No such file or directory
+                                                                                                                                                                                                                                           
+┌──(kali㉿kali)-[~]
+└─$ ./redirect2.sh       
+                                                                                                                                                                                                                                           
+┌──(kali㉿kali)-[~]
+└─$ cat output.txt       
+cat: out_file.txt: No such file or directory
+Hello World! This is Arunkumar.
